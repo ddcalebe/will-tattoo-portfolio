@@ -72,8 +72,8 @@ return (
         />
       </header>
   ) : (
-    <header className="pointer-events-none grid grid-cols-2 justify-center items-center xs:justify-between px-4 md:px-8 fixed top-0 z-40 w-full h-auto pt-1 bg-transparent">
-      <div className="hidden xs:flex gap-4">
+    <header className="pointer-events-none grid grid-cols-2 justify-center items-center sm:justify-between px-4 md:px-8 fixed top-0 z-40 w-full h-auto pt-1 bg-transparent">
+      <div className="hidden sm:flex gap-4">
         {[...Array(5)].map((_, i) => (
           <AnimatedStars
             key={i}

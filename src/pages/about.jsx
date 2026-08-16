@@ -118,14 +118,14 @@ const About = () => {
 
             </div>
             <div className="">
-              <div className="flex justify-between px-4">
+              <div className="flex flex-col items-center xs:flex-row justify-between px-4">
                 <span>
                   Todos os direitos reservados - 2026
                 </span>
                 <a
-                href="github.com/davicalebe"
+                href="github.com/ddcalebe"
                 target="_blank">
-                Powered by Davi Calebe
+                Powered by ddcalebe
                 </a>
               </div>
               <img src={backgroundFooter} alt="backgroundFooter" className='w-full h-auto' />

@@ -109,7 +109,7 @@ const Workshop = () => {
               <FeatureCard
                 key={card.title}
                 {...card}
-                className={`max-w-xs ${card.desktopPosition}`}
+                className={`max-w-xxs ${card.desktopPosition}`}
               />
             ))}
 
