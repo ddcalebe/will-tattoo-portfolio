@@ -1,48 +1,25 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useBreakpoint } from '../hooks/useBreakpoint'
 import star from '../assets/star-fulfilled.png'
-import close from '../assets/close.png'
 import menu from '../assets/menu.png'
-import calendar from '../assets/calendar.png'
 import whatsapp from '../assets/whatsapp.png'
 import instagram from '../assets/instagram.png'
 import Sidebar from './sidebar'
-import GalleryPagination from './gallery-pagination'
 import AnimatedStars from './animatedStars'
 
 const Topbar = ({ active, galleryPage, setGalleryPage }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { md, lg } = useBreakpoint()
+  const { md } = useBreakpoint()
   const isMobile = !md
 
-  const calendarSizes = {
-    0: { height: lg ? 56 : 44, paddingX: lg? 16 : 12 },
-    1: { height: 44, paddingX: 12 },
-    2: { height: 44, paddingX: 12 },
-    3: { height: lg ? 56 : 44, paddingX: lg ? 16 : 12 },
+  const stars = {
+    width: 48,
+    height: 48,
   }
 
-  const iconSizes = {
-    0: { whatsapp: lg ? 56 : 44, instagram: lg ? 56 : 44 },
-    1: { whatsapp: 44, instagram: 44 },
-    2: { whatsapp: 44, instagram: 44 },
-    3: { whatsapp: lg ? 56 : 44, instagram: lg ? 56 : 44 },
-  }
-
-  const starSizes = {
-    0: { width: lg ? 48 : 36, height: lg ? 48 : 36 },
-    1: { width: 36, height: 36 },
-    2: { width: 36, height: 36 },
-    3: { width: lg ? 48 : 36, height: lg ? 48 : 36 },
-  }
-
-  const cal = calendarSizes[active] ?? calendarSizes[0]
-  const sizes = iconSizes[active] ?? iconSizes[0]
-  const stars = starSizes[active] ?? starSizes[0]
-
-return (
-  isMobile ? (
+  return (
+    isMobile ? (
       <header>
         <div className="flex justify-center items-center px-4 fixed top-0 z-40 w-full h-18 bg-black border-b-6 border-b-primary">
           <div className="flex gap-2">
@@ -59,94 +36,73 @@ return (
               className="flex flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-md bg-black hover:opacity-90 transition-opacity"
             >
               <img src={menu} />
-{/*               <span className="block w-10 h-2 bg-primary rounded-full" />
-              <span className="block w-10 h-2 bg-primary rounded-full" />
-              <span className="block w-10 h-2 bg-primary rounded-full" /> */}
             </button>
           </div>
         </div>
 
         <Sidebar
-        sidebarOpen={sidebarOpen}
-        setSidebarOpen={setSidebarOpen}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
         />
       </header>
-  ) : (
-    <header className="pointer-events-none grid grid-cols-2 justify-center items-center sm:justify-between px-4 md:px-8 fixed top-0 z-40 w-full h-auto pt-1 bg-transparent">
-      <div className="hidden sm:flex gap-4">
-        {[...Array(5)].map((_, i) => (
-          <AnimatedStars
-            key={i}
-            src={star}
-            size={stars}
-            delay={i * 0.08}
-          />
-        ))}
-      </div>
+    ) : (
+      <header className="pointer-events-none grid grid-cols-2 justify-center items-center sm:justify-between px-4 md:px-8 fixed top-0 z-40 w-full h-auto pt-1 bg-transparent">
 
-      <motion.div
-        initial={{ opacity: 0, y: -16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="pointer-events-auto flex items-center justify-end gap-4 bg-transparent rounded-b-lg"
-      >
-        <motion.a
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex justify-center items-center gap-4 bg-white hover:bg-gray-300 border border-black rounded-full overflow-hidden"
-          animate={{
-            height: cal.height,
-            paddingLeft: cal.paddingX,
-            paddingRight: cal.paddingX,
-          }}
-          transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        {/* ESTRELAS */}
+        <div className="hidden sm:flex gap-4">
+          {[...Array(5)].map((_, i) => (
+            <AnimatedStars
+              key={i}
+              src={star}
+              size={stars}
+              delay={i * 0.08}
+            />
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="pointer-events-auto flex items-center justify-end gap-4 bg-transparent rounded-b-lg"
         >
-          <motion.span
-            className="text-black font-audiowide uppercase whitespace-nowrap"
-            animate={{ fontSize: cal.height === 56 ? '1.125rem' : '0.875rem' }}
-            transition={{ type: "spring", stiffness: 500, damping: 30 }}
+
+          {/* WHATSAPP */}
+          <motion.a
+            href="https://wa.me/558197568257?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center items-center gap-4 h-14 px-4 bg-white hover:bg-gray-300 border border-black rounded-full"
           >
-            Agende uma sessão
-          </motion.span>
+            <span className="text-black font-audiowide uppercase whitespace-nowrap text-lg">
+              Agende uma sessão
+            </span>
 
-          <motion.img
-            src={calendar}
-            alt="calendar"
-            className="filter brightness-0 shrink-0 hover:cursor-pointer"
-            animate={{
-              width: cal.height === 56 ? 36 : 28,
-              height: cal.height === 56 ? 36 : 28,
-            }}
-            transition={{ type: "spring", stiffness: 500, damping: 30 }}
-          />
-        </motion.a>
+            <img
+              src={whatsapp}
+              alt="whatsapp"
+              className="filter brightness-0 shrink-0 hover:cursor-pointer w-9 h-9"
+            />
+          </motion.a>
 
-        <motion.a
-          href="https://wa.me/558197568257?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex justify-center items-center bg-black hover:bg-gray-500 border-2 border-primary rounded-full"
-          animate={{ width: sizes.whatsapp, height: sizes.whatsapp }}
-          transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        >
-          <img src={whatsapp} alt="whatsapp" className="filter brightness-50 invert w-1/2 h-1/2 hover:cursor-pointer" />
-        </motion.a>
+          {/* INSTAGRAM */}
+          <motion.a
+            href="https://www.instagram.com/menorwill_tatuador"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center items-center bg-black hover:bg-gray-500 border-2 border-primary rounded-full w-14 h-14"
+          >
+            <img
+              src={instagram}
+              alt="instagram"
+              className="filter brightness-50 invert w-1/2 h-1/2 hover:cursor-pointer"
+            />
+          </motion.a>
 
-        <motion.a
-          href="https://www.instagram.com/menorwill_tatuador"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex justify-center items-center bg-black hover:bg-gray-500 border-2 border-primary rounded-full"
-          animate={{ width: sizes.instagram, height: sizes.instagram }}
-          transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        >
-          <img src={instagram} alt="instagram" className="filter brightness-50 invert w-1/2 h-1/2 hover:cursor-pointer" />
-        </motion.a>
-      </motion.div>
-    </header>
+        </motion.div>
+      </header>
+    )
   )
-)
 }
 
 export default Topbar
