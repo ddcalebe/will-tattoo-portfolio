@@ -82,39 +82,17 @@ const About = () => {
                   />
                 </div>
               </div>
-              <h1 className="text-center font-audiowide font-bold uppercase text-3xl">
-                Transforme sua pele em arte!
-              </h1>
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative overflow-hidden w-full p-4 rounded-full border-2 border-primary/60 bg-black shadow-[inset_0_-3px_2px_0_#25D366]"
-              >
-                <div
-                  className="absolute inset-0 bg-repeat bg-center bg-[length:30px_30px] opacity-15"
-                  style={{ backgroundImage: `url(${wppBGimage})` }}
-                />
-
-                <span className="relative z-10 block text-center text-3xl font-audiowide text-primary">
-                  FALE COMIGO
-                </span>
-              </a>
-              <a
-                href="https://www.instagram.com/menorwill_tatuador"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative overflow-hidden w-full p-4 rounded-full border-2 border-primary/60 bg-black shadow-[inset_0_-3px_2px_0_#ffc400]"
-              >
-                <div
-                  className="absolute inset-0 bg-repeat bg-center bg-[length:30px_30px] opacity-15"
-                  style={{ backgroundImage: `url(${instagramBGimage})` }}
-                />
-
-                <span className="relative z-10 block text-center text-3xl font-audiowide text-primary">
-                  MAIS PROJETOS
-                </span>
-              </a>
+<h1 className="
+  text-center
+  font-audiowide
+  font-bold
+  uppercase
+  text-[clamp(1.8rem,7vw,3rem)]
+  leading-tight
+  py-10
+">
+  Transforme sua pele em arte!
+</h1>
 
             </div>
             <div className="">

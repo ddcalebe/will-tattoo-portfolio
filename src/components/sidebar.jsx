@@ -53,7 +53,7 @@ const Sidebar = ({sidebarOpen, setSidebarOpen}) => {
 
             <div className="mt-auto flex justify-end gap-4 p-6">
                 <a
-                href=""
+                href="https://wa.me/558197568257?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex justify-center items-center bg-black hover:bg-gray-500 border-2 border-primary rounded-full"
