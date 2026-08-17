@@ -44,57 +44,136 @@ const Workshop = () => {
       id="workshop"
       className="scroll-mt-18 md:scroll-mt-0 flex flex-col items-center justify-center flex-shrink-0 gap-10 w-full md:w-screen min-h-screen md:h-screen snap-center snap-always overflow-hidden"
     >
-    {isMobile && (
-      <div className="flex justify-between items-center w-full p-4 text-black bg-primary">
-        <h1 className="font-audiowide tracking-wide text-3xl">
-          WORKSHOP
-        </h1>
-
-        <div className="flex items-center gap-2">
-          <img
-            src={starFulfilled}
-            className="w-7 h-7"
-            alt="Star"
-          />
-
-          <img
-            src={starFulfilled}
-            className="w-7 h-7"
-            alt="Star"
-          />
-
-          <img
-            src={starOutlined}
-            className="w-7 h-7"
-            alt="Star"
-          />
-        </div>
-      </div>
-    )}
-
       {isMobile ? (
         <>
-          <legend className="text-3xl text-center font-audiowide font-bold brightness-50 invert text-primary">
+          <motion.div
+            initial={{ opacity: 0, y: -25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 0.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex justify-between items-center w-full p-4 text-black bg-primary"
+          >
+            <h1 className="font-audiowide tracking-wide text-3xl">
+              WORKSHOP
+            </h1>
+
+            <motion.div
+              className="flex items-center gap-2"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: 0.15,
+                ease: "easeOut",
+              }}
+            >
+              <img
+                src={starFulfilled}
+                className="w-7 h-7"
+                alt="Star"
+              />
+
+              <img
+                src={starFulfilled}
+                className="w-7 h-7"
+                alt="Star"
+              />
+
+              <img
+                src={starOutlined}
+                className="w-7 h-7"
+                alt="Star"
+              />
+            </motion.div>
+          </motion.div>
+
+          <motion.legend
+            initial={{
+              opacity: 0,
+              y: 35,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="text-3xl text-center font-audiowide font-bold brightness-50 invert text-primary"
+          >
             WORKSHOP PRETO E CINZA
-          </legend>
+          </motion.legend>
 
           <div className="flex flex-col gap-8 p-8 pt-0 text-primary">
-            <div className="w-full flex justify-center">
+
+            {/* IMAGEM */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 50,
+                scale: 0.95,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="w-full flex justify-center"
+            >
               <img
                 src={workshop}
                 className="rounded-lg w-full max-h-[500px] object-cover [box-shadow:0px_13px_29px_7px_#000000]"
                 alt="workshop"
               />
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {cards.map((card) => (
-                <FeatureCard
+              {cards.map((card, index) => (
+                <motion.div
                   key={card.title}
-                  {...card}
-                />
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.15,
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  <FeatureCard
+                    {...card}
+                  />
+                </motion.div>
               ))}
             </div>
+
           </div>
         </>
       ) : (

@@ -21,98 +21,196 @@ const About = () => {
   return (
     <section id='about' className='scroll-mt-18 md:scroll-mt-0 flex flex-col items-center justify-center flex-shrink-0 md:gap-10 w-full md:w-screen min-h-screen md:h-screen snap-center snap-always overflow-hidden'>
 
-    {isMobile && (
-      <div className="flex justify-between items-center w-full p-4 border-b-4 text-black bg-primary">
-        <h1 className="font-audiowide tracking-wide text-3xl">
-          SOBRE
-        </h1>
+      {isMobile ? (
+        <div className="flex flex-col justify-center w-full h-full bg-primary">
 
-        <div className="flex items-center gap-2">
-          <img
-            src={starFulfilled}
-            className="w-7 h-7"
-            alt="Star"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: -25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 0.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex justify-between items-center w-full p-4 border-b-4 text-black bg-primary"
+          >
+            <h1 className="font-audiowide tracking-wide text-3xl">
+              SOBRE
+            </h1>
 
-          <img
-            src={starFulfilled}
-            className="w-7 h-7"
-            alt="Star"
-          />
+            <motion.div
+              className="flex items-center gap-2"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: 0.15,
+                ease: "easeOut",
+              }}
+            >
+              <img
+                src={starFulfilled}
+                className="w-7 h-7"
+                alt="Star"
+              />
 
-          <img
-            src={starFulfilled}
-            className="w-7 h-7"
-            alt="Star"
-          />
-        </div>
-      </div>
-    )}
-      {
-        isMobile ? (
-          <div className='flex flex-col justify-center w-full h-full bg-primary'>
-            <div className="flex flex-col p-6 gap-10 overflow-hidden w-full h-auto">
-              <div className="flex flex-col">
+              <img
+                src={starFulfilled}
+                className="w-7 h-7"
+                alt="Star"
+              />
 
-                <h3 className="text-black text-4xl text-end font-audiowide tracking-widest">QUEM É MENOR?</h3>
-                <div className="text-justify mt-3"> 
-                    <span className='text-lg text-black'>
-                      Sou especialista em tatuagens de realismo preto e cinza, criando peças exclusivas que unem técnica, precisão e expressão artística em cada detalhe. Cada projeto é desenvolvido de forma totalmente personalizada, respeitando a anatomia do corpo para alcançar equilíbrio, profundidade e uma composição que valoriza a obra como um todo.
+              <img
+                src={starFulfilled}
+                className="w-7 h-7"
+                alt="Star"
+              />
+            </motion.div>
+          </motion.div>
 
-                      Mais do que reproduzir imagens, transformo histórias, memórias e sentimentos em tatuagens únicas, com alto nível de fidelidade aos traços e um acabamento refinado. Meu compromisso é entregar uma arte atemporal, marcante e executada com excelência, proporcionando um resultado que impressiona não apenas pela riqueza de detalhes, mas também pela sua identidade e presença.
+          <div className="flex flex-col p-6 gap-10 overflow-hidden w-full h-auto">
 
-                    </span>
-                </div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.15,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="flex flex-col"
+            >
+              <h3 className="text-black text-4xl text-end font-audiowide tracking-widest">
+                QUEM É MENOR?
+              </h3>
 
-              </div>
+              <div className="text-justify mt-3">
+                <span className="text-lg text-black">
+                  Sou especialista em tatuagens de realismo preto e cinza, criando peças exclusivas que unem técnica, precisão e expressão artística em cada detalhe. Cada projeto é desenvolvido de forma totalmente personalizada, respeitando a anatomia do corpo para alcançar equilíbrio, profundidade e uma composição que valoriza a obra como um todo.
 
-              <div>
-                <div className="grid grid-rows-2 w-full h-full rounded-tl-3xl rounded-3xl bg-black border border-primary overflow-hidden">
-                  <img 
-                    src={studio} 
-                    alt="studio" 
-                    className="w-full h-full object-cover opacity-90"
-                  />
-
-                  <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.8284881028794!2d-34.946386499999996!3d-8.1189389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1e76bdd84115%3A0x47bce86e42798adb!2sAv.%20Pernambuco%2C%20410%20-%20COHAB%2C%20Recife%20-%20PE%2C%2051280-000!5e0!3m2!1spt-BR!2sbr!4v1782011686996!5m2!1spt-BR!2sbr"
-                      className="w-full h-full"
-                      loading="lazy"
-                      allowFullScreen
-                  />
-                </div>
-              </div>
-<h1 className="
-  text-center
-  font-audiowide
-  font-bold
-  uppercase
-  text-[clamp(1.8rem,7vw,3rem)]
-  leading-tight
-  py-10
-">
-  Transforme sua pele em arte!
-</h1>
-
-            </div>
-            <div className="">
-              <div className="flex flex-col items-center xs:flex-row justify-between px-4">
-                <span>
-                  Todos os direitos reservados - 2026
+                  Mais do que reproduzir imagens, transformo histórias, memórias e sentimentos em tatuagens únicas, com alto nível de fidelidade aos traços e um acabamento refinado. Meu compromisso é entregar uma arte atemporal, marcante e executada com excelência, proporcionando um resultado que impressiona não apenas pela riqueza de detalhes, mas também pela sua identidade e presença.
                 </span>
-                <a
-                href="github.com/ddcalebe"
-                target="_blank">
-                Powered by ddcalebe
-                </a>
               </div>
-              <img src={backgroundFooter} alt="backgroundFooter" className='w-full h-auto' />
+            </motion.div>
 
-            </div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              <div className="grid grid-rows-2 w-full h-full rounded-tl-3xl rounded-3xl bg-black border border-primary overflow-hidden">
+                <img
+                  src={studio}
+                  alt="studio"
+                  className="w-full h-full object-cover opacity-90"
+                />
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.8284881028794!2d-34.946386499999996!3d-8.1189389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1e76bdd84115%3A0x47bce86e42798adb!2sAv.%20Pernambuco%2C%20410%20-%20COHAB%2C%20Recife%20-%20PE%2C%2051280-000!5e0!3m2!1spt-BR!2sbr!4v1782011686996!5m2!1spt-BR!2sbr"
+                  className="w-full h-full"
+                  loading="lazy"
+                  allowFullScreen
+                />
+              </div>
+            </motion.div>
+
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 35,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.3,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="
+                text-center
+                font-audiowide
+                font-bold
+                uppercase
+                text-[clamp(1.8rem,7vw,3rem)]
+                leading-tight
+                py-10
+              "
+            >
+              Transforme sua pele em arte!
+            </motion.h1>
 
           </div>
-        ) :
-        (
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <div className="flex flex-col items-center xs:flex-row justify-between px-4">
+              <span>
+                Todos os direitos reservados - 2026
+              </span>
+
+              <a
+                href="github.com/ddcalebe"
+                target="_blank"
+              >
+                Powered by ddcalebe
+              </a>
+            </div>
+
+            <img
+              src={backgroundFooter}
+              alt="backgroundFooter"
+              className="w-full h-auto"
+            />
+          </motion.div>
+
+        </div>
+      ) : (
           <div className="flex flex-col justify-center gap-10 xl:gap-0 xl:justify-evenly w-full h-10/12 xl:h-9/12 lg:-mt-10">
           
             <div className="grid md:grid-cols-2 items-stretch h-10/12 md:h-8/12 xl:h-9/12 px-8 gap-6">

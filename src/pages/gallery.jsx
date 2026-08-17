@@ -34,7 +34,7 @@ const Gallery = ({ galleryPage }) => {
   const [active, setActive] = useState(0)
   const refs = useRef([])
 
-  const isMobile = !useBreakpoint().md;
+  const isMobile = !useBreakpoint().md
 
   useEffect(() => {
     if (!refs.current[active]) return
@@ -77,33 +77,45 @@ const Gallery = ({ galleryPage }) => {
       "
     >
 
-    {isMobile && (
-      <div className="flex justify-between items-center w-full p-4 text-black bg-primary">
-        <h1 className="font-audiowide tracking-wide text-3xl">
-          GALERIA
-        </h1>
+      {isMobile && (
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex justify-between items-center w-full p-4 text-black bg-primary"
+        >
+          <h1 className="font-audiowide tracking-wide text-3xl">
+            GALERIA
+          </h1>
 
-        <div className="flex items-center gap-2">
-          <img
-            src={starFulfilled}
-            className="w-7 h-7"
-            alt="Star"
-          />
+          <motion.div
+            className="flex items-center gap-2"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <img
+              src={starFulfilled}
+              className="w-7 h-7"
+              alt="Star"
+            />
 
-          <img
-            src={starOutlined}
-            className="w-7 h-7"
-            alt="Star"
-          />
+            <img
+              src={starOutlined}
+              className="w-7 h-7"
+              alt="Star"
+            />
 
-          <img
-            src={starOutlined}
-            className="w-7 h-7"
-            alt="Star"
-          />
-        </div>
-      </div>
-    )}
+            <img
+              src={starOutlined}
+              className="w-7 h-7"
+              alt="Star"
+            />
+          </motion.div>
+        </motion.div>
+      )}
 
       <div
         className="
@@ -225,7 +237,6 @@ const Gallery = ({ galleryPage }) => {
                   />
                 )}
 
-                {/* Overlay do vídeo em destaque */}
                 {isCenter && (
                   <motion.div
                     initial={isMobile ? false : { opacity: 0 }}
