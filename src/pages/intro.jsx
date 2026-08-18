@@ -11,265 +11,262 @@
     return (
       <section id="intro" className='relative flex items-center justify-center flex-shrink-0 w-full md:w-screen h-auto md:h-screen snap-center snap-always overflow-hidden'>
 
-{isMobile && (
-  <div className="relative w-full bg-black">
-    <div className="relative w-full h-[40rem] overflow-hidden">
+      {isMobile && (
+        <div className="relative w-full bg-black">
+          <div className="relative w-full h-[40rem] overflow-hidden">
 
-      {/* FOTO DE FUNDO */}
-      <img
-        src={profilepic}
-        alt="Will"
-        className="
-          absolute
-          inset-0
-          w-full
-          h-full
-          object-cover
-          object-center
-          opacity-70
-        "
-      />
+            <img
+              src={profilepic}
+              alt="Will"
+              className="
+                absolute
+                inset-0
+                w-full
+                h-full
+                object-cover
+                object-center
+                opacity-70
+              "
+            />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/45" />
+            <div className="absolute inset-0 bg-black/45" />
 
-      {/* GRADIENTE */}
-      <div
-        className="
-          absolute
-          inset-0
-          bg-gradient-to-b
-          from-black/80
-          via-transparent
-          to-black
-        "
-      />
+            <div
+              className="
+                absolute
+                inset-0
+                bg-gradient-to-b
+                from-black/80
+                via-transparent
+                to-black
+              "
+            />
 
-    </div>
+          </div>
 
-    <div className="absolute top-[50%] text-white w-full px-3 flex flex-col gap-5 items-center">
+          <div className="absolute top-[50%] text-white w-full px-3 flex flex-col gap-5 items-center">
 
-      <motion.div
-        className="flex justify-center gap-3"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.08,
-            },
-          },
-        }}
-      >
-        {[...Array(5)].map((_, i) => (
-          <motion.img
-            key={i}
-            src={star}
-            alt="star"
-            className="w-10"
-            variants={{
-              hidden: {
+            <motion.div
+              className="flex justify-center gap-3"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.08,
+                  },
+                },
+              }}
+            >
+              {[...Array(5)].map((_, i) => (
+                <motion.img
+                  key={i}
+                  src={star}
+                  alt="star"
+                  className="w-10"
+                  variants={{
+                    hidden: {
+                      opacity: 0,
+                      y: -20,
+                      scale: 0.7,
+                    },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                    },
+                  }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeOut",
+                  }}
+                />
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="w-full mb-7"
+              initial={{
                 opacity: 0,
-                y: -20,
-                scale: 0.7,
-              },
-              visible: {
+                y: 35,
+              }}
+              whileInView={{
                 opacity: 1,
                 y: 0,
-                scale: 1,
-              },
-            }}
-            transition={{
-              duration: 0.4,
-              ease: "easeOut",
-            }}
-          />
-        ))}
-      </motion.div>
+              }}
+              viewport={{
+                once: true,
+                amount: 0.4,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.35,
+                ease: "easeOut",
+              }}
+            >
 
-      <motion.div
-        className="w-full mb-7"
-        initial={{
-          opacity: 0,
-          y: 35,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-          amount: 0.4,
-        }}
-        transition={{
-          duration: 0.6,
-          delay: 0.35,
-          ease: "easeOut",
-        }}
-      >
+              <motion.h1
+                className="
+                  font-audiowide
+                  uppercase
+                  text-center
+                  leading-[0.78]
+                  tracking-[-0.06em]
+                  text-[clamp(4rem,18vw,7rem)]
+                  text-white
+                  drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]
+                "
+                initial={{
+                  opacity: 0,
+                  x: -30,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  duration: 0.55,
+                  delay: 0.4,
+                  ease: "easeOut",
+                }}
+              >
+                MENOR
+              </motion.h1>
 
-        <motion.h1
-          className="
-            font-audiowide
-            uppercase
-            text-center
-            leading-[0.78]
-            tracking-[-0.06em]
-            text-[clamp(4rem,18vw,7rem)]
-            text-white
-            drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]
-          "
-          initial={{
-            opacity: 0,
-            x: -30,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.55,
-            delay: 0.4,
-            ease: "easeOut",
-          }}
-        >
-          MENOR
-        </motion.h1>
+              <motion.h1
+                className="
+                  font-audiowide
+                  uppercase
+                  text-center
+                  leading-[0.78]
+                  tracking-[-0.06em]
+                  text-[clamp(4.5rem,20vw,7.5rem)]
+                  text-primary
+                  drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]
+                "
+                initial={{
+                  opacity: 0,
+                  x: 30,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  duration: 0.55,
+                  delay: 0.5,
+                  ease: "easeOut",
+                }}
+              >
+                WILL
+              </motion.h1>
 
-        <motion.h1
-          className="
-            font-audiowide
-            uppercase
-            text-center
-            leading-[0.78]
-            tracking-[-0.06em]
-            text-[clamp(4.5rem,20vw,7.5rem)]
-            text-primary
-            drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]
-          "
-          initial={{
-            opacity: 0,
-            x: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.55,
-            delay: 0.5,
-            ease: "easeOut",
-          }}
-        >
-          WILL
-        </motion.h1>
+            </motion.div>
 
-      </motion.div>
+            <motion.div
+              className="flex flex-col gap-5 w-full"
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.3,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.65,
+                ease: "easeOut",
+              }}
+            >
 
-      <motion.div
-        className="flex flex-col gap-5 w-full"
-        initial={{
-          opacity: 0,
-          y: 40,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-          amount: 0.3,
-        }}
-        transition={{
-          duration: 0.6,
-          delay: 0.65,
-          ease: "easeOut",
-        }}
-      >
+              <motion.a
+                href="https://wa.me/558197568257?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  h-[58px]
+                  w-full
+                  rounded-full
+                  overflow-hidden
+                  bg-primary
+                  border
+                  border-primary
+                  shadow-[0_0_25px_rgba(37,211,102,0.25)]
+                  active:scale-[0.98]
+                  transition-transform
+                "
+                whileTap={{
+                  scale: 0.98,
+                }}
+              >
+                <span
+                  className="
+                    text-black
+                    font-audiowide
+                    text-[clamp(1rem,5vw,1.5rem)]
+                    tracking-wide
+                  "
+                >
+                  FALE COMIGO
+                </span>
+              </motion.a>
 
-        <motion.a
-          href="https://wa.me/558197568257?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            flex
-            items-center
-            justify-center
-            h-[58px]
-            w-full
-            rounded-full
-            overflow-hidden
-            bg-primary
-            border
-            border-primary
-            shadow-[0_0_25px_rgba(37,211,102,0.25)]
-            active:scale-[0.98]
-            transition-transform
-          "
-          whileTap={{
-            scale: 0.98,
-          }}
-        >
-          <span
-            className="
-              text-black
-              font-audiowide
-              text-[clamp(1rem,5vw,1.5rem)]
-              tracking-wide
-            "
-          >
-            FALE COMIGO
-          </span>
-        </motion.a>
+              <motion.a
+                href="https://www.instagram.com/menorwill_tatuador"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  h-[58px]
+                  w-full
+                  rounded-full
+                  border
+                  border-white/40
+                  bg-black/50
+                  backdrop-blur-md
+                  active:scale-[0.98]
+                  transition-transform
+                "
+                whileTap={{
+                  scale: 0.98,
+                }}
+              >
+                <span
+                  className="
+                    text-white
+                    font-audiowide
+                    text-[clamp(1rem,5vw,1.5rem)]
+                    tracking-wide
+                  "
+                >
+                  VER TRABALHOS
+                </span>
+              </motion.a>
 
-        <motion.a
-          href="https://www.instagram.com/menorwill_tatuador"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            flex
-            items-center
-            justify-center
-            h-[58px]
-            w-full
-            rounded-full
-            border
-            border-white/40
-            bg-black/50
-            backdrop-blur-md
-            active:scale-[0.98]
-            transition-transform
-          "
-          whileTap={{
-            scale: 0.98,
-          }}
-        >
-          <span
-            className="
-              text-white
-              font-audiowide
-              text-[clamp(1rem,5vw,1.5rem)]
-              tracking-wide
-            "
-          >
-            VER TRABALHOS
-          </span>
-        </motion.a>
+            </motion.div>
+          </div>
 
-      </motion.div>
-    </div>
-
-    <div className="w-full h-[20rem] bg-transparent" />
-  </div>
-)}
+          <div className="w-full h-[20rem] bg-transparent" />
+        </div>
+      )}
 
         <div className="absolute hidden md:block inset-0 md:w-1/2 h-full md:[clip-path:ellipse(90%_100%_at_0%_50%)]">
           <img

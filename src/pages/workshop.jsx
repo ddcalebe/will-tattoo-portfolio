@@ -115,7 +115,6 @@ const Workshop = () => {
 
           <div className="flex flex-col gap-8 p-8 pt-0 text-primary">
 
-            {/* IMAGEM */}
             <motion.div
               initial={{
                 opacity: 0,

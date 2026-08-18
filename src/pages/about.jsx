@@ -7,8 +7,6 @@ import { useBreakpoint } from '../hooks/useBreakpoint'
 import { motion } from "framer-motion";
 import DropdownButton from '../components/dropdown-button';
 import { useState } from 'react';
-import MapModal from '../components/map-modal';
-import aboutBackground from '../assets/mobile-about-background.png'
 import backgroundFooter from '../assets/background-footer.png'
 import starFulfilled from '../assets/black-star-fulfilled.png'
 import starOutlined from '../assets/black-star-outlined.png'
@@ -218,7 +216,7 @@ const About = () => {
                 <DropdownButton index={1} activeIndex={activeIndex} setActiveIndex={setActiveIndex} title="QUEM É MENOR?">
                   <div className="text-justify">
                     <span className='text-sm text-white'>
-                      O Menor Will é especialista em tatuagens de realismo preto e cinza, oferecendo trabalhos exclusivos com alto nível de detalhamento. Cada projeto é planejado de forma personalizada, respeitando a estrutura corporal e garantindo equilíbrio, profundidade e acabamento impecável.
+                      Sou especialista em tatuagens de realismo preto e cinza, criando peças exclusivas que unem técnica, precisão e expressão artística em cada detalhe. Cada projeto é desenvolvido de forma totalmente personalizada, respeitando a anatomia do corpo para alcançar equilíbrio, profundidade e uma composição que valoriza a obra como um todo.
                     </span>
                   </div>
                 </DropdownButton>

@@ -48,7 +48,6 @@ const Topbar = ({ active, galleryPage, setGalleryPage }) => {
     ) : (
       <header className="pointer-events-none grid grid-cols-2 justify-center items-center sm:justify-between px-4 md:px-8 fixed top-0 z-40 w-full h-auto pt-1 bg-transparent">
 
-        {/* ESTRELAS */}
         <div className="hidden sm:flex gap-4">
           {[...Array(5)].map((_, i) => (
             <AnimatedStars
@@ -67,7 +66,6 @@ const Topbar = ({ active, galleryPage, setGalleryPage }) => {
           className="pointer-events-auto flex items-center justify-end gap-4 bg-transparent rounded-b-lg"
         >
 
-          {/* WHATSAPP */}
           <motion.a
             href="https://wa.me/558197568257?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
             target="_blank"
@@ -85,7 +83,6 @@ const Topbar = ({ active, galleryPage, setGalleryPage }) => {
             />
           </motion.a>
 
-          {/* INSTAGRAM */}
           <motion.a
             href="https://www.instagram.com/menorwill_tatuador"
             target="_blank"

@@ -3,13 +3,11 @@ import { useEffect } from "react";
 
 const AnimatedStars = ({ src, size, delay }) => {
     const controls = useAnimationControls();
-    /* const starShadow = "drop-shadow(0px 15px 25px rgba(0,0,0,0.75))"; */
     const starShadow = `
     drop-shadow(0px 3px 4px rgba(0,0,0,1))
     drop-shadow(0px 12px 20px rgba(0,0,0,0.7))
     `;
 
-// Entrada inicial da estrela
   useEffect(() => {
     controls.start({
       rotate: 0,
@@ -24,7 +22,6 @@ const AnimatedStars = ({ src, size, delay }) => {
   }, [controls, delay]);
 
 
-  // Alteração do tamanho conforme a section ativa
   useEffect(() => {
     controls.start({
       width: size.width,
@@ -37,8 +34,6 @@ const AnimatedStars = ({ src, size, delay }) => {
     });
   }, [controls, size.width, size.height]);
 
-
-  // Cintilação contínua
   useEffect(() => {
     controls.start({
       filter: [
@@ -54,7 +49,6 @@ const AnimatedStars = ({ src, size, delay }) => {
       },
     });
   }, [controls, delay]);
-
 
   return (
     <motion.img
