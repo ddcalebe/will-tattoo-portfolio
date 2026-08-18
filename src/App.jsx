@@ -1,4 +1,4 @@
-import background from './assets/background.jpg'
+import background from './assets/background.webp'
 import Intro from './pages/intro'
 import Gallery from './pages/gallery'
 import Workshop from './pages/workshop'

@@ -1,5 +1,5 @@
-  import profilepic from '../assets/profilepic.JPG'
-  import profilepic2 from '../assets/will-profile-background.jpg'
+  import profilepic from '../assets/profilepic.webp'
+  import profilepic2 from '../assets/will-profile-background.webp'
   import wppBGimage from '../assets/whatsapp.png'
   import star from '../assets/star-fulfilled.png'
   import { useBreakpoint } from '../hooks/useBreakpoint'

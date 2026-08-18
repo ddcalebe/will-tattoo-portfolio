@@ -7,7 +7,7 @@ import { useBreakpoint } from '../hooks/useBreakpoint'
 import { motion } from "framer-motion";
 import DropdownButton from '../components/dropdown-button';
 import { useState } from 'react';
-import backgroundFooter from '../assets/background-footer.png'
+import backgroundFooter from '../assets/background-footer.webp'
 import starFulfilled from '../assets/black-star-fulfilled.png'
 import starOutlined from '../assets/black-star-outlined.png'
 

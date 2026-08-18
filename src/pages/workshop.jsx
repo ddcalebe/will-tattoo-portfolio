@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import workshop from '../assets/blackwork-workshop.jpeg'
+import workshop from '../assets/blackwork-workshop.webp'
 import tattooMachine from '../assets/tattoo-machine.png'
 import gloves from '../assets/gloves.png'
 import stencil from '../assets/stencil.png'
