@@ -89,7 +89,7 @@ const OverlayIntro = () => {
                   px-10 py-4
                   text-sm font-audiowide font-medium
                   uppercase tracking-[0.25em]
-                  transition-colors duration-300
+                  transition-colors duration-300 cursor-pointer
                   hover:bg-white
                   hover:text-[#575757]
                 "
