@@ -7,9 +7,10 @@ import Testimonials from './pages/testimonials'
 import About from './pages/about'
 import Topbar from './components/topbar'
 import Pagination from './components/pagination'
+import OverlayIntro from './components/overlayIntro'
 import { useState, useRef } from "react"
 import { useHorizontalScroll } from './hooks/useHorizontalScroll'
-import { useActiveSection } from './hooks/useActiveSection' 
+import { useActiveSection } from './hooks/useActiveSection'
 
 function App() {
   const sections = [
@@ -28,6 +29,11 @@ function App() {
   
   return (
     <div className='relative min-h-screen overflow-hidden'>
+
+      <div className="hidden md:block">
+        <OverlayIntro />
+      </div>
+
       <Topbar
         active={active}
         galleryPage={galleryPage}
