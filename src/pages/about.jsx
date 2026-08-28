@@ -294,9 +294,14 @@ const About = () => {
                 />
               </div>
 
-              <button className="w-full text-primary font-audiowide font-bold uppercase md:text-2xl lg:text-3xl rounded-full bg-black hover:bg-[#111] p-6 cursor-pointer inset-shadow-sm inset-shadow-primary">
+              <a
+                href="https://wa.me/5581983500539?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-primary font-audiowide font-bold uppercase md:text-2xl lg:text-3xl rounded-full bg-black hover:bg-[#111] p-6 cursor-pointer inset-shadow-sm inset-shadow-primary text-center"
+              >
                 Transforme sua pele em arte!
-              </button>
+              </a>
             </motion.div>
           </div>
         )
