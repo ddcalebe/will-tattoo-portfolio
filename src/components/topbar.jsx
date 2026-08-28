@@ -67,7 +67,7 @@ const Topbar = ({ active, galleryPage, setGalleryPage }) => {
         >
 
           <motion.a
-            href="https://wa.me/558197568257?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
+            href="https://wa.me/5581983500539?text=Will%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center gap-4 h-14 px-4 bg-white hover:bg-gray-300 border border-black rounded-full"
